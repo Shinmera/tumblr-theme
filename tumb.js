@@ -29,7 +29,6 @@ $(function(){
     }
 
     function setCookie(name,val){
-        log("Setting cookie",name,"to",val);
         document.cookie = name+"="+val;
         return document.cookie;
     }
