@@ -239,6 +239,10 @@ body>header>a:hover{}
     color: #FFF;
 }
 
+.post .content-main ul{
+    list-style-type: disc !important;
+}
+
 .post.post-type-chat .content-main,
 .post.post-type-text .content-main{
     text-align: left;
