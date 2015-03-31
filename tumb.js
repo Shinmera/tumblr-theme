@@ -19,10 +19,12 @@ $(function(){
     }
 
     function getCookie(name){
+        var cookies = document.cookie.split(";");
         for(var i=0; i<cookies.length; i++){
             var pair = cookies[i].split("=");
             if(pair[0]==name) return pair[1];
         }
+        return null;
     }
 
     function setCookie(name,val){
@@ -37,10 +39,11 @@ $(function(){
         }
         if(!found)cookies.push(name+"="+val);
         document.cookie = cookies.join(";");
+        return cookies;
     }
 
     function setPageOffset(n){
-        setCookie("prefetchOffset", n);
+        return setCookie("prefetchOffset", n);
     }
 
     function getPreviousPageOffset(){
@@ -66,6 +69,7 @@ $(function(){
         lastpage = currentpage;
         log("Detected base page url: " + baseUrl);
         log("Currently on page " + currentpage);
+        return currentpage;
     }
 
     function showSpinner(status){
@@ -77,12 +81,13 @@ $(function(){
             log("Prefetching stopped.");
             $("#prefetcher").hide();
         }
+        return prefetching;
     }
 
     function fetchPage(num, successfun){
         showSpinner(true);
         log("Fetching page "+num);
-        $.ajax({
+        return $.ajax({
             url: baseUrl+num,
             type: "GET",
             dataType: "html"
@@ -113,8 +118,8 @@ $(function(){
             currentpage = page;
             window.history.pushState("prefetch", "page"+page, baseUrl+page);
             setCookie("prefetchPage", page);
-            return page;
         }
+        return page;
     }
 
     function initScrollTracking(element){
