@@ -4,6 +4,8 @@ You are welcome to use it for your own page if you so desire.
 
 The theme includes infinite-scrolling, but not in the annoying way you usually encounter it. Once the user reaches the bottom, a new page is dynamically fetched and appended after a page marker. Once the user scrolls past a page marker, the browser remembers the page and position you're in, so that if you accidentally leave the page or refresh, you'll be exactly where you left off with no additional load overhead. No more painful scrolling down forever until you find where you were before.
 
+All JavaScript on the theme has been designed to be *optional* flavour. The site will be just as well usable with JavaScript deactivated entirely.
+
 All parts of the theme are easily configurable through fields in the Tumblr customizer.
 
 ## How To
