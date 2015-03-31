@@ -33,6 +33,9 @@
         {block:SubmissionsEnabled}<li class="submit"><a href="/submit" class="page">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}
         {block:IfAuthor}<li><a href="https://www.tumblr.com/follow/{text:Author}">Follow</a></li>{/block:IfAuthor}
         <li><a href="/rss">RSS</a></li>
+        {block:Pages}
+        <li><a href="{URL}">{Label}</a></li>
+        {/block:Pages}
         <!-- Extra Links -->
         <li><a href="https://everything.shinmera.com">Everything</a></li>
         <li><a href="https://shinmera.com/artlicense.txt">Art License</a></li>
