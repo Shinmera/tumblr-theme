@@ -48,8 +48,11 @@ $(function(){
 
     function getPreviousPageOffset(){
         var page = getCookie("prefetchPage");
-        if(currentpage == page)
-            return getCookie("prefetchOffset");
+        if(currentpage == page){
+            var offset = getCookie("prefetchOffset");
+            log("Offset on page was",offset);
+            return offset;
+        }
         return 0;
     }
 
@@ -113,13 +116,13 @@ $(function(){
     }
 
     function setCurrentPage(page){
-        if(currentpage != page){
+        if(page != currentpage && page != null){
             log("Currently on page",page);
             currentpage = page;
             window.history.pushState("prefetch", "page"+page, baseUrl+page);
             setCookie("prefetchPage", page);
         }
-        return page;
+        return currentpage;
     }
 
     function initScrollTracking(element){
