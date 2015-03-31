@@ -37,6 +37,7 @@ $(function(){
                 pair[1] = val;
                 found = true;
             }
+            cookies[i]=pair.join("=");
         }
         if(!found)cookies.push(name+"="+val);
         document.cookie = cookies.join(";");
@@ -71,8 +72,8 @@ $(function(){
             currentpage++;
         }
         lastpage = currentpage;
-        log("Detected base page url: " + baseUrl);
-        log("Currently on page " + currentpage);
+        log("Detected base page url",baseUrl);
+        log("Currently on page",currentpage);
         return currentpage;
     }
 
@@ -90,7 +91,7 @@ $(function(){
 
     function fetchPage(num, successfun){
         showSpinner(true);
-        log("Fetching page "+num);
+        log("Fetching page",num);
         return $.ajax({
             url: baseUrl+num,
             type: "GET",
