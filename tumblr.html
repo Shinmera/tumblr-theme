@@ -1,0 +1,192 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>{block:IndexPage}{Title}{/block:IndexPage}{block:SearchPage}Search results for: {SearchQuery}{/block:SearchPage}{block:PostSummary}{PostSummary}{/block:PostSummary}</title>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+    <link rel="stylesheet" type="text/css" href="tumblr.css" />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+    <meta name="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="description" content=""/>
+    <meta name="content-language" content="en-US,en-GB,en"/>
+    <meta name="author" content="Shinmera"/>
+    <meta name="distribution" content="Global"/>
+    <meta name="keywords" content="" />
+    <meta name="robots" content="ALL"/>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <nav>
+      <ul id="links">
+        <li><a href="http://tymoon.eu">TyNET</a></li>
+        <li><a href="/">Home</a></li>
+        {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
+        {block:AskEnabled}<li class="ask"><a href="/ask" class="page">{AskLabel}</a></li>{/block:AskEnabled}
+        {block:SubmissionsEnabled}<li class="submit"><a href="/submit" class="page">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}
+        <li><a href="http://shinmera.com/artlicense.txt">Art License</a></li>
+        <li><a href="http://www.tumblr.com/follow/Shinmera">Follow</a></li>
+        <li><a href="/rss">RSS</a></li>
+        <li>|</li>
+        <li><a href="http://everything.shinmera.com">Everything</a></li>
+        <li><a href="http://twitter.shinmera.com">Twitter</a></li>
+      </ul>
+    </nav>
+    <header>
+      <img src="https://secure.gravatar.com/avatar/daa167d57e692a423067fceba30aadf8?s=128&d=mm" alt="" />
+      <h1><a href="/">{Title}</a></h1>
+    </header>
+    <div id="content">
+      {block:Pagination}
+      <div class="pages">
+        {block:PreviousPage}<a href="{PreviousPage}" class="newer">&#171; Newer</a>{/block:PreviousPage}
+        <span></span>
+        {block:NextPage}<a href="{NextPage}" class="older">Older &#187;</a>{/block:NextPage}
+      </div>
+      {/block:Pagination}
+      <ul id="posts">
+        {block:Posts}
+        <li class="post {block:Text}post-type-text{/block:Text}{block:Photo}post-type-photo{/block:Photo}{block:Photoset}post-type-photoset{/block:Photoset}{block:Quote}post-type-quote{/block:Quote}{block:Link}post-type-link{/block:Link}{block:Chat}post-type-chat{/block:Chat}{block:Video}post-type-video{/block:Video}{block:Audio}post-type-audio{/block:Audio}">
+          <article>
+            <header>
+              {block:Title}<a class="permalink" href="{Permalink}"><h3>{Title}</h3></a>{/block:Title}
+              {block:NoteCount}
+              <span class="notecount">
+                <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+              </span>
+              {/block:NoteCount}
+              {block:Date}
+              <span class="date">
+                {Year}. {MonthNumberWithZero}. {DayOfMonthWithZero}
+              </span>
+              {/block:Date}
+              <ul class="actions">
+                <li><a href="{Permalink}" class="permalink"><i class="fa fa-link"></i></a></li>
+                <li>{LikeButton color="white"}</li>
+                <li>{ReblogButton color="white"}</li>
+              </ul>
+            </header>
+            <div class="content-main">
+              {block:IndexPage}
+               {block:Photo}
+                 <a href="{Permalink}"><img src="{PhotoURL-500}" class="photo" alt="{PhotoAlt}" /></a>
+               {/block:Photo}
+              {/block:IndexPage}
+              {block:PermalinkPage}
+                <a href="{PhotoUrl-HighRes}"><img src="{PhotoUrl-HighRes}" class="photo" alt="{PhotoAlt}" /></a>
+              {/block:PermalinkPage}
+              {block:Photoset}
+                {Photoset-500}
+              {/block:Photoset}
+              {block:Quote}
+                <blockquote class="quote">"{Quote}"</blockquote>
+                {block:Source}<p class="quote-source">&mdash; {Source}</p>{/block:Source}
+              {/block:Quote}
+              {block:Chat}
+                <ul class="chat-wrap">
+                  {block:Lines}
+                  <li class="{Alt} user_{UserNumber}">
+                    {block:Label}<span class="label">{Label}</span>{/block:Label}
+                    {Line}
+                  </li>
+                  {/block:Lines}
+                </ul>
+              {/block:Chat}
+              {block:Video}
+                {Video-500}
+              {/block:Video}
+              {block:Audio}
+                {AudioPlayerGrey}
+              {/block:Audio}
+              {block:Text}
+                <blockquote>
+                  {Body}
+                </blockquote>
+              {/block:Text}
+            </div>
+            <footer>
+              <blockquote>
+                {block:Caption}{Caption}{/block:Caption}
+                {block:Link}{block:Description}{Description}{/block:Description}{/block:Link}
+              </blockquote>
+              {block:Link}
+                <div class="link">Read More: <a href="{URL}" {Target}>{Name}</a></div>
+              {/block:Link}
+              {block:HasTags}
+              <div class="tags">
+                Tags: 
+                <ul>
+                  {block:Tags}
+                  <li><a href="{TagURL}">{Tag}</a></li>
+                  {/block:Tags}
+                </ul>
+              </div>
+              {/block:HasTags}
+            </footer>
+          </article>
+        </li>
+        {/block:Posts}
+      </ul>
+      {block:Pagination}
+        <div class="pages">
+          {block:PreviousPage}<a href="{PreviousPage}" class="newer">&#171; Newer</a>{/block:PreviousPage}
+          <span></span>
+          {block:NextPage}<a href="{NextPage}" class="older">Older &#187;</a>{/block:NextPage}
+        </div>
+      {/block:Pagination}
+    </div>
+    <footer>
+      &#169;{CopyrightYears} Nicolas Hafner, TymoonNET/NexT<br />
+      Running on Tumblr
+    </footer>
+    <div id="prefetcher" style="display: none;">
+        Fetching next page...
+    </div>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="tumblr.js"></script>
+  </body>
+</html>
+
+
+<!-- 
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK. :MMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM0. .XMMMMMM0:lNMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMX. .KMMMMMNl  .XMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWNX0000KNWWMMMMMMMMMMd  xMMMMWk.  'OMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWKxl;..         ..':ldkKWMMMXXMMMMX;  .dWMMMMMMWMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMKo;.   .;lox00Oxdoodcccc:. .,lOWMMMMMXc':KMMMMW0l. '0MMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMXd,  .:d0Xxc,,,;'...      .;kX0xc'.;xNMMMMMMMMMKo'   .lKMMMMM
+MMMMMMMMMMMMMMMMMMMMN0dc.  'o0XOdl' .'.  ..........;, ..'lkd, .:0WMMMMMW:   :OWMMMMMMM
+MMMMMMMMMMMMMMMMW0o,   ,oONMO;.     ...';;;;;;;;;,....         ...c0MMMMWXONMMMMMMMMMM
+MMMMMMMMMMMMW0dc.  .cxXMWKkc    ..,;;;;;;;;;;;;;;;;;;;;;;;;;;'. 'lc..oXMMMMMMMMMMMMMMM
+MMMMMMMMMW0l.  .:xXMMMMO...  .';;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;,. oXx;.'l0WMMMMMMMMMMM
+MMMMMMMM0. 'lONMMMMMMMk .;..,;;;;;;;;;;;;;;;;;;;,,;;;;;;;;;;;;;;;. .KMWKd;,OMMMMMMMMMM
+MMMMMMMMXc.;xNMMMMMMKl   .,;;;;;;;;;;;;;;;;;,.;;. ,;;,..;;;;;;;;;;' .0MMNl.kMMMMMMMMMM
+MMMMMMMMMMMNx:c:,xd'.   ';;;;;;;;;,'',;;;;,. .,.  ,;;. .;;;;;;;;;;;' .xl,:KMMMMMMMMMMM
+MMMMMMMMMMMMMMWX.  c. .;;;;;;;;'.     .,'.  .,.,. ;;'    ....';;;;;;.  ,NMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMO  .; .;;;;;;;;;,',;;;'.    .'.dx .;, .xl      ';;;;;,   OMMMMMMMMMMMMM
+MMMMMMMMMMMMMMO.    .;;;;;;;;;;;;;,.   ':'..:KN, '' .OWWk.     ,;;;;;.  oMMMMMMMMMMMMM
+MMMMMMMMMMMMMW'  :, .;;;;;;;;;;;.     :l.,oKWWd .' .OWKxodc,   .;;;;;'  xMMMMMMMMMMMMM
+MMMMMMMMMMMMMo  cN. .;;;;;;;;;.         .0WWWK. . 'K0,     'xo  ';;;;. .KMMMMMMMMMMMMM
+MMMMMMMMMMMMx   oX;  ;;;;;;;,.    .:ol,.  xWX,  .dN0. .cl,  .O, ';;;, .KMMMMMMMMMMMMMM
+MMMMMMMMMMMW,    k0. .;;;;;;.   ;0WWWWWNk'lX, .dXWWO;lXWWWO'.x, ';;,  dMMMMMMMMMMMMMMM
+MMMMMMMMMMMk    :oOl  .;;;;,  ;OWWWWWWWWWWW0kKW0oNWWWWWWWWWWNK..;;'  ;MMMMMMMMMMMMMMMM
+MMMMMMMMMMM;   .K00xc. .,;;,  lWWWWWWWWWWWWWWWWN,0WWWWWWWWWWWc .'. ...XMMMMMMMMMMMMMMM
+MMMMMMMMMMW' .  .,lX0.   .';. .XWWWWWWWWWNX0OkxxxOKNWWWWWWWWO  .. .0k cMMMMMMMMMMMMMMM
+MMMMMMMMMMK .,. .oKx'dl        .c0NWWWWc..         .'kWWWWWNxdOd. cNK ,MMMMMMMMMMMMMMM
+MMMMMMMMMMl .,  .XWl.kc  .  .,'',lKWWWWd        ..  :XWWWWWWW0, .kkKc dMMMMMMMMMMMMMMM
+MMMMMMMMM0  ,   kWWxdWX. ''. .l0WWWWWWWWl  .;:;.  .xWWWWWWNx, .cOx'   dMMMMMMMMMMMMMMM
+MMMMMMMMMc  ,  .NWNXWWk  ,;;'.  .cxKWWWWWd  .x0; ,0WWWN0o,.  .o0:0d0l  kMMMMMMMMMMMMMM
+MMMMMMMMX. .;.  lNc'Nk. .,.;;;;,'.. .;ox0NXl.  .oNKxl,.     .cxl koNl  .NMMMMMMMMMMMMM
+MMMMMMMMl  ;;.  .k.oKk  ;' ,;;;;;;;;'..   .,,'''..   ..,;...'NWdoNWx   .NMMMMMMMMMMMMM
+MMMMMMMk  .;.  .xOcd,x  ;. ;;;;.';;;;;'. cOxdlll' .,;;;;;..l OWNXWK.  .kMMMMMMMMMMMMMM
+MMMMMMW' .;' .c;OWX:o, .; .;;;, ';;;;.   lXNNNWWo   '.;;;..c lNc.00' 'XMMMMMMMMMMMMMMM
+MMMMMMx  ,;. :lod:ko   ,' ';'.  ,,,,' .d:,''..kl.,,  .;;,.  'cx:.k,o..XMMMMMMMMMMMMMMM
+MMMMMK. .;;. .xx ;..  ';. ;. .;'  ..,clNMMMMK.  dMNx,.      .;kXKk:c. xMMMMMMMMMMMMMMM
+MMMMO. .;;.  :o.cN, .,;. ..   :NdxMMMMMMMMMKx'  dWMNNWXo;   ,:ccl0d;  dMMMMMMMMMMMMMMM
+MMMX. .;;. .ONxoNN' .;,    .. oNXdMMMMMMMMo      .. .dW0ko.  .c..,o.  OMMMMMMMMMMMMMMM
+MMX' .;;. .K0NWWNc  ,,   .',,. ;XxWMMMMMMX. .dO   l0x.:NkXd ... .;   dMMMMMMMMMMMMMMMM
+MK. .;,.  oc.0xc.  ',   ',,,,. lWlKMMMMMMl .0MW'  kMMx lo0X. ,,,.   ,WMMMMMMMMMMMMMMMM
+O. .'.   ,..Ol  ..,'  .,,,,,,. ,KodMMMMMX. kMMM,  .KMW,.c:W; .,,,.   0MMMMMMMMMMMMMMMM
+  .,  .xl'.cO:  ;''  .,,,,,,,,. xdlMMMMMl cMMMM'   :MMo oxM; .,,,'   kMMMMMMMMMMMMMMMM
+ ,;.  ,kNK0d:  .. .  ,,,,,,... ,NNkWMMMM; xMMMN. .'.NMx 'lMk .,,,'  .XMMMMMMMMMMMMMMMM
+,;.  'NWO ,:   . ..  ',,,,,,.   .0,KMMMW. xMMM0  .; 0M0 .KMx .,,,'  :MMMMMMMMMMMMMMMMM
+ !-->

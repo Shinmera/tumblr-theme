@@ -1,0 +1,305 @@
+html,body{
+    background: #000;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 12pt;
+}
+
+.date{
+    font-family: Consolas, monospace;
+    font-size: 10pt;
+}
+
+hr{
+    border: none;
+    border-bottom: 2px solid #00EEFF;
+    box-shadow: 0 0 10px #00EEFF;
+}
+
+#posts .pager:first-child hr{
+    visibility: hidden;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 5px #0088EE;
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid #0088EE;
+    z-index: 1000;
+    font-size: 12pt;
+}
+
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+nav ul li{
+    display: inline;
+    color: #FFF;
+}
+
+nav ul li a{
+    display: inline-block;
+    padding: 0 10px 0 10px;
+    height: 30px;
+    line-height: 30px;
+    color: #FFF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav ul li:first-child a{
+    color: #0088EE;
+    font-weight: bold;
+}
+
+nav ul li a:hover{
+    background: #333;
+}
+
+body>header{
+    margin-top: 75px;
+    background: #151515;
+    color: #FFF;
+    padding: 5px 15% 5px 15%;
+    border-bottom: 3px solid #0088EE;
+    min-height: 50px;
+    position: relative;
+}
+
+body>header img{
+    vertical-align: middle;
+    float: left;
+    margin: 0 10px 0 -80px;
+    border: 5px solid #0088EE;
+    background: #151515;
+    width: 128px;
+    height: 128px;
+    border-radius: 128px;
+}
+
+body>header h1{
+    margin: 0;
+    padding: 0;
+    font-size: 18pt;
+}
+
+body>header h1 a{
+    color: #FFF;
+    text-decoration: none;
+}
+
+body>header>a{
+    display: inline-block;
+    color: #FFF;
+    text-decoration: none;
+    background: #0088EE;
+    padding: 0 5px 0 5px;
+    position: absolute;
+    bottom: 0;
+}
+
+body>header>a:hover{}
+#content{
+    margin: 0 15% 0 15%;
+    padding: 10px 10px 10px 70px;
+    min-width: 500px;
+    max-width: 1200px;
+}
+
+#content .pages{
+    text-align: center;
+    font-size: 0;
+    background: #151515;
+}
+
+#content .pages a{
+    color: #0088EE;
+    display: inline-block;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12pt;
+    height: 20px;
+}
+
+#content .pages span{
+    height: 30px;
+    display: inline-block;
+}
+
+#content .pages a:first-child{
+    float: left;
+    background: -moz-linear-gradient(left, rgba(0, 136, 238, 0.2) 0%, rgba(0, 136, 238, 0) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 136, 238, 0.2)), color-stop(100%, rgba(0, 136, 238, 0)));
+    background: -webkit-linear-gradient(left, rgba(0, 136, 238, 0.2) 0%, rgba(0, 136, 238, 0) 100%);
+    background: -o-linear-gradient(left, rgba(0, 136, 238, 0.2) 0%, rgba(0, 136, 238, 0) 100%);
+    background: -ms-linear-gradient(left, rgba(0, 136, 238, 0.2) 0%, rgba(0, 136, 238, 0) 100%);
+    background: linear-gradient(to right, rgba(0, 136, 238, 0.2) 0%, rgba(0, 136, 238, 0) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#330088ee', endColorstr='#000088ee', GradientType=1);
+}
+
+#content .pages a:last-child{
+    float: right;
+    background: -moz-linear-gradient(left, rgba(0, 136, 238, 0) 0%, rgba(0, 136, 238, 0.2) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 136, 238, 0)), color-stop(100%, rgba(0, 136, 238, 0.2)));
+    background: -webkit-linear-gradient(left, rgba(0, 136, 238, 0) 0%, rgba(0, 136, 238, 0.2) 100%);
+    background: -o-linear-gradient(left, rgba(0, 136, 238, 0) 0%, rgba(0, 136, 238, 0.2) 100%);
+    background: -ms-linear-gradient(left, rgba(0, 136, 238, 0) 0%, rgba(0, 136, 238, 0.2) 100%);
+    background: linear-gradient(to right, rgba(0, 136, 238, 0) 0%, rgba(0, 136, 238, 0.2) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#000088ee', endColorstr='#330088ee', GradientType=1);
+}
+
+#content img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#posts{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.post{
+    background: #333;
+    margin-bottom: 10px;
+}
+
+.post a{
+    color: #4EAAED;
+}
+
+.post a:hover{
+    color: #A9CDE8;
+}
+
+.post a:visited{
+    color: #0088EE;
+}
+
+.post header{
+    background: #000;
+    color: #FFF;
+    padding: 5px;
+    border-bottom: 1px solid #0088EE;
+    position: relative;
+    min-height: 20px;
+}
+
+.post header a{
+    color: #FFF;
+}
+
+.post header a:visited{
+    color: #EEE;
+}
+
+.post header h3{
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.post header .date{
+    float: right;
+}
+
+.post header .actions{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: -22px;
+    top: 52px;
+}
+
+.post header .actions li{
+    display: block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.post header .actions li i{
+    font-size: 20px;
+    color: #FFF;
+}
+
+.post .content-main{
+    text-align: center;
+}
+
+.post.post-type-text .content-main{
+    text-align: left;
+    color: #FFF;
+}
+
+.post.post-type-link footer blockquote:before{
+    content: "Excerpt: ";
+}
+
+.post.post-type-link footer>.link{
+    margin: 0 20px 20px 25px;
+    display: block;
+    text-align: right;
+    font-weight: bold;
+}
+
+.post footer{
+    background: #151515;
+    color: #FFF;
+    border-top: 2px solid #222;
+}
+
+.post footer blockquote{
+    margin: 5px 5px 5px 15px;
+}
+
+.post .tags{
+    background: #111;
+    padding: 5px;
+}
+
+.post .tags ul{
+    list-style: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.post .tags ul li{
+    display: inline;
+}
+
+body>footer{
+    margin-top: 10px;
+    border-top: 2px solid #222;
+    padding: 10px;
+    font-size: 8pt;
+    text-align: center;
+    background: #151515;
+    color: #CCC;
+    height: 30px;
+}
+
+#prefetcher{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    font-size: 18pt;
+    font-weight: bold;
+    text-align: center;
+    color: #FFF;
+    background: rgba(0, 0, 0, 0.75);
+}
