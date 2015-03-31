@@ -16,6 +16,7 @@
     <meta name="text:Author" content="" />
     <meta name="text:Copyright" content="" />
     <meta name="text:Gravatar Url" content="" />
+    <meta name="text:Extra Nav HTML" content="" />
     <meta name="description" content="{MetaDescription}"/>
     {block:IfAuthor}<meta name="author" content="{text:Author}"/>{/block:IfAuthor}
     {block:IfMetaKeywords}<meta name="keywords" content="{text:Meta Keywords}" />{/block:IfMetaKeywords}
@@ -26,7 +27,7 @@
   <body>
     <nav>
       <ul id="links">
-        <li><a href="http://tymoon.eu">TyNET</a></li>
+        <li><a href="https://tymoon.eu">TyNET</a></li>
         <li><a href="/">Home</a></li>
         {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
         {block:AskEnabled}<li class="ask"><a href="/ask" class="page">{AskLabel}</a></li>{/block:AskEnabled}
@@ -36,9 +37,9 @@
         {block:Pages}
         <li><a href="{URL}">{Label}</a></li>
         {/block:Pages}
-        <!-- Extra Links -->
-        <li><a href="https://everything.shinmera.com">Everything</a></li>
-        <li><a href="https://shinmera.com/artlicense.txt">Art License</a></li>
+        {block:IfExtraNavHTML}
+        {text:Extra Nav HTML}
+        {/block:IfExtraNavHTML}
       </ul>
     </nav>
     <header>
