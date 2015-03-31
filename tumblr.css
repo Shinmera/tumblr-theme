@@ -236,11 +236,12 @@ body>header>a:hover{}
 
 .post .content-main{
     text-align: center;
+    color: #FFF;
 }
 
+.post.post-type-chat .content-main,
 .post.post-type-text .content-main{
     text-align: left;
-    color: #FFF;
 }
 
 .post.post-type-link footer blockquote:before{
