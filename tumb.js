@@ -139,7 +139,9 @@ $(function(){
             // Update history
             var page = findCurrentPage();
             setCurrentPage(page);
-            setPageOffset(element.pageYOffset);
+            setPageOffset(element.pageYOffset
+                          -$(".pager").last().offset().top
+                          +$("#posts").offset().top);
         });
     }
 
