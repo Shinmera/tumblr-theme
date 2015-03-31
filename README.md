@@ -7,4 +7,11 @@ The theme includes infinite-scrolling, but not in the annoying way you usually e
 All parts of the theme are easily configurable through fields in the Tumblr customizer.
 
 ## How To
-To install this theme, visit <https://www.tumblr.com/customize/>, click on "Edit HTML", and paste the contents of [tumblr.html](https://raw.githubusercontent.com/Shinmera/tumblr-theme/gh-pages/tumblr.html) in there. Click on "Update Preview" and you should see a basic view of your page. Click the back arrow and configure the variables as you see fit. Finally, hit "Save" to publish the changes.
+To install this theme: 
+
+* Visit <https://www.tumblr.com/customize/>
+* Click on "Edit HTML"
+* Paste the contents of [tumblr.html](https://raw.githubusercontent.com/Shinmera/tumblr-theme/gh-pages/tumblr.html) in there. 
+* Click on "Update Preview". You should see a basic view of your page. 
+* Click the back arrow and configure the variables as you see fit. 
+* Finally, hit "Save" to publish the changes.
