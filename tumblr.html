@@ -13,12 +13,12 @@
     <link rel="alternate" type="application/rss+xml" href="{RSS}" />
     <link rel="icon" type="image/png" href="{Favicon}">
     <meta name="text:Meta Keywords" content="" />
-    <meta name="text:Author" content="" />
+    <meta name="text:Username" content="" />
     <meta name="text:Copyright" content="" />
     <meta name="text:Gravatar Url" content="" />
     <meta name="text:Extra Nav HTML" content="" />
     <meta name="description" content="{MetaDescription}"/>
-    {block:IfAuthor}<meta name="author" content="{text:Author}"/>{/block:IfAuthor}
+    {block:IfUsername}<meta name="author" content="{text:Username}"/>{/block:IfUsername}
     {block:IfMetaKeywords}<meta name="keywords" content="{text:Meta Keywords}" />{/block:IfMetaKeywords}
     <meta name="content-language" content="en-US,en-GB,en"/>
     <meta name="distribution" content="Global"/>
@@ -32,7 +32,7 @@
         {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
         {block:AskEnabled}<li class="ask"><a href="/ask" class="page">{AskLabel}</a></li>{/block:AskEnabled}
         {block:SubmissionsEnabled}<li class="submit"><a href="/submit" class="page">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}
-        {block:IfAuthor}<li><a href="https://www.tumblr.com/follow/{text:Author}">Follow</a></li>{/block:IfAuthor}
+        {block:IfUsername}<li><a href="https://www.tumblr.com/follow/{text:Username}">Follow</a></li>{/block:IfUsername}
         <li><a href="/rss">RSS</a></li>
         {block:Pages}
         <li><a href="{URL}">{Label}</a></li>
