@@ -29,6 +29,7 @@ $(function(){
     }
 
     function setCookie(name,val){
+        log("Setting cookie",name,"to",val);
         var cookies = document.cookie.split(";");
         var found = false;
         for(var i=0; i<cookies.length; i++){
