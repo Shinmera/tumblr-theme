@@ -23,26 +23,15 @@ $(function(){
         var cookies = document.cookie.split(";");
         for(var i=0; i<cookies.length; i++){
             var pair = cookies[i].split("=");
-            if(pair[0]==name) return pair[1];
+            if(pair[0].trim()==name) return pair[1].trim();
         }
         return null;
     }
 
     function setCookie(name,val){
         log("Setting cookie",name,"to",val);
-        var cookies = document.cookie.split(";");
-        var found = false;
-        for(var i=0; i<cookies.length; i++){
-            var pair = cookies[i].split("=");
-            if(pair[0] == name){
-                pair[1] = val;
-                found = true;
-            }
-            cookies[i]=pair.join("=");
-        }
-        if(!found)cookies.push(name+"="+val);
-        document.cookie = cookies.join(";");
-        return cookies;
+        document.cookie = name+"="+val;
+        return document.cookie;
     }
 
     function setPageOffset(n){
