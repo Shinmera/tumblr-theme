@@ -140,7 +140,7 @@ $(function(){
             var page = findCurrentPage();
             setCurrentPage(page);
             setPageOffset(element.pageYOffset
-                          -$(".pager").last().offset().top
+                          -$(".pager[data-pagenum="+page+"]").offset().top
                           +$("#posts").offset().top);
         });
     }
