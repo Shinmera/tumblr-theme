@@ -1,18 +1,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>{block:IndexPage}{Title}{/block:IndexPage}{block:SearchPage}Search results for: {SearchQuery}{/block:SearchPage}{block:PostSummary}{PostSummary}{/block:PostSummary}</title>
+    <title>
+      {block:IndexPage}{Title}{/block:IndexPage}
+      {block:PostSummary}{PostSummary}{/block:PostSummary}
+      {block:SearchPage}Search: {SearchQuery}{/block:SearchPage}
+      {block:TagPage}[{Tag}]{/block:TagPage}
+      | {Title}
+    </title>
+    <link rel="stylesheet" type="text/css" href="//shinmera.github.io/tumblr-theme/tumblr.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
     <link rel="alternate" type="application/rss+xml" href="{RSS}" />
-    <link rel="stylesheet" type="text/css" href="tumblr.css" />
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
-    <meta name="content-type" content="text/html; charset=UTF-8"/>
-    <meta name="description" content=""/>
+    <link rel="icon" type="image/png" href="{Favicon}">
+    <meta name="text:Meta Keywords" content="" />
+    <meta name="text:Author" content="" />
+    <meta name="text:Copyright" content="" />
+    <meta name="text:Gravatar Url" content="" />
+    <meta name="description" content="{MetaDescription}"/>
+    {block:IfAuthor}<meta name="author" content="{text:Author}"/>{/block:IfAuthor}
+    {block:IfMetaKeywords}<meta name="keywords" content="{text:Meta Keywords}" />{/block:IfMetaKeywords}
     <meta name="content-language" content="en-US,en-GB,en"/>
-    <meta name="author" content="Shinmera"/>
     <meta name="distribution" content="Global"/>
-    <meta name="keywords" content="" />
     <meta name="robots" content="ALL"/>
-    <meta charset="utf-8" />
   </head>
   <body>
     <nav>
@@ -22,16 +31,15 @@
         {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
         {block:AskEnabled}<li class="ask"><a href="/ask" class="page">{AskLabel}</a></li>{/block:AskEnabled}
         {block:SubmissionsEnabled}<li class="submit"><a href="/submit" class="page">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}
-        <li><a href="http://shinmera.com/artlicense.txt">Art License</a></li>
-        <li><a href="http://www.tumblr.com/follow/Shinmera">Follow</a></li>
+        {block:IfAuthor}<li><a href="https://www.tumblr.com/follow/{text:Author}">Follow</a></li>{/block:IfAuthor}
         <li><a href="/rss">RSS</a></li>
-        <li>|</li>
-        <li><a href="http://everything.shinmera.com">Everything</a></li>
-        <li><a href="http://twitter.shinmera.com">Twitter</a></li>
+        <!-- Extra Links -->
+        <li><a href="https://everything.shinmera.com">Everything</a></li>
+        <li><a href="https://shinmera.com/artlicense.txt">Art License</a></li>
       </ul>
     </nav>
     <header>
-      <img src="https://secure.gravatar.com/avatar/daa167d57e692a423067fceba30aadf8?s=128&d=mm" alt="" />
+      <img alt="" {block:IfGravatarUrl}src="{text:Gravatar Url}"{/block:IfGravatarUrl} src="{PortraitURL-128}" />
       <h1><a href="/">{Title}</a></h1>
     </header>
     <div id="content">
@@ -134,19 +142,20 @@
       {/block:Pagination}
     </div>
     <footer>
-      &#169;{CopyrightYears} Nicolas Hafner, TymoonNET/NexT<br />
-      Running on Tumblr
+      {block:IfCopyright}&#169;{CopyrightYears} {text:Copyright}<br />{/block:IfCopyright}
+      <a href="https://github.com/Shinmera/tumblr-theme">TyNETv5-Style theme</a> running on Tumblr
     </footer>
     <div id="prefetcher" style="display: none;">
         Fetching next page...
     </div>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-    <script type="text/javascript" src="tumblr.js"></script>
+    <script type="text/javascript" src="//shinmera.github.io/tumblr-theme/tumb.js"></script>
   </body>
 </html>
-
-
-<!-- 
+<!------------------------------------------------------------------------------------
+Hello there. You can view this theme on https://github.com/Shinmera/tumblr-theme
+Also see https://everything.shinmera.com
+--------------------------------------------------------------------------------------
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK. :MMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM0. .XMMMMMM0:lNMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMX. .KMMMMMNl  .XMMMMMMMMMMMM
@@ -189,4 +198,4 @@ O. .'.   ,..Ol  ..,'  .,,,,,,. ,KodMMMMMX. kMMM,  .KMW,.c:W; .,,,.   0MMMMMMMMMM
   .,  .xl'.cO:  ;''  .,,,,,,,,. xdlMMMMMl cMMMM'   :MMo oxM; .,,,'   kMMMMMMMMMMMMMMMM
  ,;.  ,kNK0d:  .. .  ,,,,,,... ,NNkWMMMM; xMMMN. .'.NMx 'lMk .,,,'  .XMMMMMMMMMMMMMMMM
 ,;.  'NWO ,:   . ..  ',,,,,,.   .0,KMMMW. xMMM0  .; 0M0 .KMx .,,,'  :MMMMMMMMMMMMMMMMM
- !-->
+!------------------------------------------------------------------------------------>
