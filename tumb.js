@@ -5,6 +5,7 @@
 //   #posts OL containing the posts.
 
 $(function(){
+    var version = "2.0.1";
     var prefetching = false;
     var baseUrl = null
     var currentpage = 1;
@@ -152,7 +153,7 @@ $(function(){
     }
 
     function init(){
-        log("Init.");
+        log("Init",version);
         
         detectPageInfo();
         window.scrollTo(0, getPreviousPageOffset());
