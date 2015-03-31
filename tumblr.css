@@ -296,6 +296,10 @@ body>footer{
     height: 30px;
 }
 
+body>footer a{
+    color: #CCC;
+}
+
 #prefetcher{
     position: fixed;
     bottom: 0;
