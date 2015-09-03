@@ -84,7 +84,9 @@
                {/block:Photo}
               {/block:IndexPage}
               {block:PermalinkPage}
-                <a href="{PhotoUrl-HighRes}"><img src="{PhotoUrl-HighRes}" class="photo" alt="{PhotoAlt}" /></a>
+               {block:Photo}
+                 <a href="{PhotoUrl-HighRes}"><img src="{PhotoUrl-HighRes}" class="photo" alt="{PhotoAlt}" /></a>
+               {/block:Photo}
               {/block:PermalinkPage}
               {block:Photoset}
                 {Photoset-500}
