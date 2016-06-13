@@ -243,6 +243,11 @@ body>header>a:hover{}
     list-style-type: disc !important;
 }
 
+.post.post-type-photoset .content-main ul.photoset{
+    list-style-type: none !important;
+    padding: 0;
+}
+
 .post.post-type-chat .content-main,
 .post.post-type-text .content-main{
     text-align: left;

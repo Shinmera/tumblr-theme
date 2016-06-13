@@ -82,15 +82,30 @@
                {block:Photo}
                  <a href="{Permalink}"><img src="{PhotoURL-500}" class="photo" alt="{PhotoAlt}" /></a>
                {/block:Photo}
+               {block:Photoset}
+                 <ul class="photoset">
+                   {block:Photos}
+                     <li>
+                       <a href="{Permalink}"><img src="{PhotoUrl-500}" class="photo" alt="{PhotoAlt}" /></a>
+                     </li>
+                   {/block:Photos}
+                 </ul>
+               {/block:Photoset}
               {/block:IndexPage}
               {block:PermalinkPage}
                {block:Photo}
                  <a href="{PhotoUrl-HighRes}"><img src="{PhotoUrl-HighRes}" class="photo" alt="{PhotoAlt}" /></a>
                {/block:Photo}
+               {block:Photoset}
+                 <ul class="photoset">
+                   {block:Photos}
+                     <li>
+                       <a href="{PhotoUrl-HighRes}"><img src="{PhotoUrl-HighRes}" class="photo" alt="{PhotoAlt}" /></a>
+                     </li>
+                   {/block:Photos}
+                 </ul>
+               {/block:Photoset}
               {/block:PermalinkPage}
-              {block:Photoset}
-                {Photoset-500}
-              {/block:Photoset}
               {block:Quote}
                 <blockquote class="quote">"{Quote}"</blockquote>
                 {block:Source}<p class="quote-source">&mdash; {Source}</p>{/block:Source}
