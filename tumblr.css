@@ -248,6 +248,12 @@ body>header>a:hover{}
     padding: 0;
 }
 
+.post.post-type-photo .content-main img,
+.post.post-type-photoset .content-main img{
+    display: block;
+    margin: 0 auto 0 auto;
+}
+
 .post.post-type-chat .content-main,
 .post.post-type-text .content-main{
     text-align: left;
